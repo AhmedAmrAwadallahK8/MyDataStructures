@@ -13,6 +13,6 @@ struct List{
 struct List create_list();
 
 //Adds New Node to List
-void add_list_node(struct List *l, void *data, size_t s);
+void add_list_node(struct List *l, void *data, size_t s, char ln_type[]);
 
 #endif
