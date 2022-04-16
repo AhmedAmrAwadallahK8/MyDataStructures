@@ -1,19 +1,24 @@
 #include <stdio.h>
 
 #include "list_node.h"
-//#include "linkedlist.h"
+#include "linkedlist.h"
 
 int main(){
-    int x[1] = {2};
-    /**struct List l = create_list();
-    add_list_node(&l, 0);
-    add_list_node(&l, 1);
-    add_list_node(&l, 2);
+    struct List l = create_list();
 
-    printf("\nNode0: %d", l.head->data);
-    printf("\nNode1: %d", l.head->next_node->data);
-    printf("\nNode2: %d", l.head->next_node->next_node->data);**/
-    printf("\nSUS1");
+    list_push_int(&l, 0);
+    list_push_int(&l, 1);
+    list_push_int(&l, 2);
+
+    list_print(&l);
+
+
+    /**printf("\nNode0: %d", *(int*)l.head->data);
+    printf("\nNode1: %d", *(int*)l.head->next_node->data);
+    printf("\nNode2: %d", *(int*)l.head->next_node->next_node->data);**/
+
+
+    /**printf("\nSUS1");
     struct List_Node * test = ln_create_node((void*)x, sizeof(int), "int");
     x[0] = 3;
     printf("\nSUS1 GOOD");
@@ -29,7 +34,7 @@ int main(){
     td = ln_get_data(test);
     printf("\nCheck After Delete: %d", *(int*)td);
     printf("\nCheck After Delete: %p", test);
-    printf("\nType After Delete: %s", ln_get_type(test));
+    printf("\nType After Delete: %s", ln_get_type(test));**/
     
 
 }

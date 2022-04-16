@@ -13,6 +13,9 @@ struct List{
 struct List create_list();
 
 //Adds New Node to List
-void add_list_node(struct List *l, void *data, size_t s, char ln_type[]);
+void list_push_int(struct List *l, int data);
+
+//Print List
+void list_print(struct List *l);
 
 #endif
