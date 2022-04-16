@@ -14,13 +14,13 @@ struct List create_list(){
 
 
 
-void add_list_node(struct List *l, void *data){
+void add_list_node(struct List *l, void *data, size_t s){
     struct List_Node *curr_n;
-    struct List_Node *new_n = create_node(data);
+    struct List_Node *new_n = create_node(data, s);
 
     //List Is Empty
     if(l->len == 0){
-        l->head = create_node(data);
+        l->head = create_node(data, s);
     }
     //List Has Atleast One Element
     else{

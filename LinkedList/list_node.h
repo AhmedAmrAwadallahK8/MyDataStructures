@@ -3,10 +3,10 @@
 
 struct List_Node{
     void *data;
-    void *next_node;
+    struct List_Node *next_node;
 };
 
-struct List_Node * create_node(void *data);
+struct List_Node * create_node(void *data, size_t s);
 
 void *get_data(struct List_Node *n);
 
