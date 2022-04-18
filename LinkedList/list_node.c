@@ -29,7 +29,7 @@ char *ln_get_type(struct List_Node *n){
 }
 
 //Delete Unused Node
-void ln_destroy_node(struct List_Node *n){
+void ln_free_node(struct List_Node *n){
     free(n->data);
     free(n);
 }

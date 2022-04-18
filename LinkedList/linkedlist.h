@@ -18,4 +18,7 @@ void list_push_int(struct List *l, int data);
 //Print List
 void list_print(struct List *l);
 
+//Remove tail node in list
+void list_pop(struct List *l);
+
 #endif

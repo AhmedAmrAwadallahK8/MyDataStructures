@@ -13,6 +13,6 @@ void *ln_get_data(struct List_Node *n);
 
 char *ln_get_type(struct List_Node *n);
 
-void ln_destroy_node(struct List_Node *n);
+void ln_free_node(struct List_Node *n);
 
 #endif

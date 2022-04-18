@@ -12,6 +12,10 @@ int main(){
 
     list_print(&l);
 
+    list_pop(&l);
+
+    list_print(&l);
+
 
     /**printf("\nNode0: %d", *(int*)l.head->data);
     printf("\nNode1: %d", *(int*)l.head->next_node->data);

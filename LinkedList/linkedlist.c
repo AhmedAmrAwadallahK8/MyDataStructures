@@ -38,7 +38,6 @@ void list_push_int(struct List *l, int data){
 void list_print(struct List *l){
     struct List_Node *curr_n = l->head;
     void * data_ptr;
-    int index = 0;
     char curr_type[20];
 
     while(curr_n != NULL){
@@ -59,9 +58,27 @@ void list_print(struct List *l){
 
 }
 void list_pop(struct List *l){
+    struct List_Node *curr_n = l->head;
+    struct List_Node *next_n = curr_n->next_node;
+    //Empty List Just Return
+    if(curr_n == NULL){return; }
+    //Find the tail node
+    while(next_n->next_node!=NULL){
+        curr_n = curr_n->next_node;
+        next_n = next_n->next_node;
+    }
+    //Free memory belonging to tail node
+    ln_free_node(next_n);
+    //Dereference pointer to removed node
+    curr_n->next_node = NULL;
+    //Decrement list size by 1
+    l->len--;
 
 }
 
-void list_rem_ind(struct List *l){
+void list_rem_ind(struct List *l, int ind){
+
+    //List index is out of range
+    if(ind >= l->len){printf("\nIndex out of bounds"); }
 
 }
