@@ -18,6 +18,9 @@ void list_add_node(struct List *l, struct List_Node *new_n);
 //Prepares an integer node to be added to the list
 void list_push_int(struct List *l, int data);
 
+//Prepares a string node to be added to the list
+void list_push_string(struct List *l, char data[]);
+
 //Print List
 void list_print(struct List *l);
 

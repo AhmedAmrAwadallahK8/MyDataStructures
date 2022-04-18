@@ -11,6 +11,7 @@ int main(){
     list_push_int(&l, 0);
     list_push_int(&l, 1);
     list_push_int(&l, 2);
+    list_push_string(&l, "Hello World");
 
     list_print(&l);
     printf("\nInput index: ");
@@ -19,4 +20,6 @@ int main(){
     n = list_get_ind(&l, ind);
 
     ln_print_node(n);
+
+
 }
