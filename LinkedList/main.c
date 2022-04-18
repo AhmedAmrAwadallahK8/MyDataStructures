@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #include "list_node.h"
@@ -29,9 +30,12 @@ int main(){
 
     ln_print_node(n);
 
+    printf("\nInput index: ");
+    scanf("%d", &ind);
+
     list_rem_ind(&l, ind);
 
     ln_print_node(n);
 
-
+    exit(EXIT_SUCCESS);
 }

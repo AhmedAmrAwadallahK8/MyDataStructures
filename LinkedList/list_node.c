@@ -9,11 +9,7 @@
 //Future additions
     //ln_print_node() is able to handle the following types
         //structs(generic)
-        //long
-        //long long
-        //float
-        //double
-        //long double
+    //Get function
 
 //Create Node
 struct List_Node * ln_create_node(void *data, size_t s, char ln_type[]){

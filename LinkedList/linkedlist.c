@@ -2,20 +2,16 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "list_node.h"
 #include "linkedlist.h"
 
 //Future additions
     //Replace data at index()
-    //Replace data and change type that node holds
+    //Refactor list_push_x to give some functionality to list_node
     //push functions for more types
         //structs(generic)
-        //long
-        //long long
-        //float
-        //double
-        //long double
 
 
 
@@ -148,21 +144,22 @@ void list_pop(struct List *l){
 
 }
 
+void range_check(struct List *l, int ind){
+    if((ind >= l->len) | (ind < 0)){printf("\nLinkedList Error: Index out of bounds"); exit(EXIT_FAILURE); }
+}
+
 //Get pointer to specified index node
 struct List_Node * list_get_ind(struct List *l, int get_ind){
     struct List_Node *curr_n = l->head;
     int curr_ind = 0;
 
-    //List index is out of range
-    if((get_ind >= l->len) | (get_ind < 0)){printf("\nIndex out of bounds"); }
-    else{
-        while(curr_ind != get_ind){
+    range_check(l, get_ind);
+
+    while(curr_ind != get_ind){
             curr_n = curr_n->next_node;
             curr_ind++;
         }  
-        return curr_n;
-    }
-    return NULL;
+    return curr_n;
 }
 
 //Remove Specific Index
@@ -173,7 +170,7 @@ void list_rem_ind(struct List *l, int rem_ind){
     int curr_ind = 0;
 
     //List index is out of range
-    if((rem_ind >= l->len) | (rem_ind < 0)){printf("\nIndex out of bounds"); }
+    range_check(l, rem_ind);
 
     //Remove final Element
     if(rem_ind == (l->len - 1)){list_pop(l); }
@@ -199,4 +196,11 @@ void list_rem_ind(struct List *l, int rem_ind){
     }
 }
 
+//Change type and data
+void list_replace_ind(struct List *l, struct List_Node *new_n, int ind){
+    int curr_ind = 0;
+    struct List_Node *curr_n = l->head;
 
+    range_check(l, ind);
+
+}
