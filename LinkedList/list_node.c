@@ -54,6 +54,11 @@ void ln_print_node(struct List_Node *n){
         int int_data = *(int*)data_ptr;
         printf("\nType: %s Data: %d", curr_type, int_data);
     }
+    //Node contains character array type(string)
+    else if(strcmp(curr_type,"char[]") == 0){
+        char *str_data = (char*)data_ptr;
+        printf("\nType: %s Data: %s", curr_type, str_data);
+    }
     //Node contains type that hasn't been programmed with any print behavior
     else{
         printf("\nType: %s Data: Data printing for this type is unspecified", curr_type);

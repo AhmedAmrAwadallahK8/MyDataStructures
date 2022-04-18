@@ -10,7 +10,6 @@
     //Replace data and change type that node holds
     //push functions for more types
         //Char
-        //Strings
         //structs(generic)
         //Bool
         //long
@@ -55,18 +54,18 @@ void list_push_int(struct List *l, int data){
 //Prepares a string node to be added to the list
 void list_push_string(struct List *l, char data[]){
     int str_len = strlen(data);
-    char type[16] = "";
+
+    //Code for specifying exact size of string(Disabled for now)
+    /**char type[16] = "";
     char type_p1[6] = "char[";
     char type_p2[10] = "";
     char type_p3[2] = "]";
-
-    //String concat for type
     sprintf(type_p2, "%d", str_len);
     strncat(type, type_p1, 5);
     strncat(type, type_p2, 9);
-    strncat(type, type_p3, 1);
+    strncat(type, type_p3, 1);**/
 
-    struct List_Node *new_n = ln_create_node((void*)data, sizeof(char)*(str_len+1), type);
+    struct List_Node *new_n = ln_create_node((void*)data, sizeof(char)*(str_len+1), "char[]");
     list_add_node(l, new_n);
 }
 
