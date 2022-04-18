@@ -196,11 +196,30 @@ void list_rem_ind(struct List *l, int rem_ind){
     }
 }
 
-//Change type and data
+//Remove node at index and replace with new node
+//Untested
+    //Test Start of list
+    //Test middle of list
+    //Test End of List
 void list_replace_ind(struct List *l, struct List_Node *new_n, int ind){
     int curr_ind = 0;
     struct List_Node *curr_n = l->head;
+    struct List_Node *next_n = curr_n->next_node;
 
     range_check(l, ind);
 
+    if(ind == 0){
+        new_n->next_node = curr_n->next_node;
+        l->head = new_n;
+        return;
+    }
+
+    while(curr_ind != (ind-1)){
+        curr_ind++;
+        curr_n = curr_n->next_node;
+        next_n = next_n->next_node;
+    }
+    curr_n->next_node = new_n;
+    new_n->next_node = next_n->next_node;
+    ln_free_node(next_n);
 }
