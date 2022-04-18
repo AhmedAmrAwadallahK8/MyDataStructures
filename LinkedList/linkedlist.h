@@ -22,7 +22,7 @@ void list_print(struct List *l);
 void list_pop(struct List *l);
 
 //Get pointer to specified index node
-struct List_Node * list_get_node(struct List *l, int get_ind);
+struct List_Node * list_get_ind(struct List *l, int get_ind);
 
 //Remove Specific Index
 void list_rem_ind(struct List *l, int rem_ind);

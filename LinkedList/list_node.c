@@ -30,6 +30,25 @@ char *ln_get_type(struct List_Node *n){
     return n->type;
 }
 
+//Print contents of node
+void ln_print_node(struct List_Node *n){
+    void * data_ptr;
+    char curr_type[20];
+
+    strcpy(curr_type, ln_get_type(n));
+    data_ptr = ln_get_data(n);
+    //Node contains int type
+    if(strcmp(curr_type,"int") == 0){
+        int int_data = *(int*)data_ptr;
+        printf("\nType: %s Data: %d", curr_type, int_data);
+    }
+    //Node contains type that hasn't been programmed with any print behavior
+    else{
+        printf("\nType: %s Data: Data printing for this type is unspecified", curr_type);
+    }
+
+}
+
 //Free memory associated with node
 void ln_free_node(struct List_Node *n){
     free(n->data);

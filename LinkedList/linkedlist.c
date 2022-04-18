@@ -15,7 +15,7 @@ struct List create_list(){
 }
 
 
-
+//Adds new integer node to list
 void list_push_int(struct List *l, int data){
     int d[1] = {data};
     struct List_Node *curr_n = l->head;
@@ -35,13 +35,13 @@ void list_push_int(struct List *l, int data){
     l->len++;
 }
 
+//Print List
 void list_print(struct List *l){
     struct List_Node *curr_n = l->head;
-    void * data_ptr;
-    char curr_type[20];
 
     while(curr_n != NULL){
-        strcpy(curr_type, ln_get_type(curr_n));
+        ln_print_node(curr_n);
+        /**strcpy(curr_type, ln_get_type(curr_n));
         data_ptr = ln_get_data(curr_n);
         //Node contains int type
         if(strcmp(curr_type,"int") == 0){
@@ -51,12 +51,14 @@ void list_print(struct List *l){
         //Node contains type that hasn't been programmed with any print behavior
         else{
             printf("\nType: %s Data: Data printing for this type is unspecified", curr_type);
-        }
+        }**/
+        
         curr_n = curr_n->next_node;
     }
     printf("\n");
 }
 
+//Remove tail node in list
 void list_pop(struct List *l){
     struct List_Node *curr_n = l->head;
     struct List_Node *next_n = curr_n->next_node;
@@ -76,7 +78,8 @@ void list_pop(struct List *l){
 
 }
 
-struct List_Node * list_get_node(struct List *l, int get_ind){
+//Get pointer to specified index node
+struct List_Node * list_get_ind(struct List *l, int get_ind){
     struct List_Node *curr_n = l->head;
     int curr_ind = 0;
 
@@ -89,8 +92,10 @@ struct List_Node * list_get_node(struct List *l, int get_ind){
         }  
         return curr_n;
     }
+    return NULL;
 }
 
+//Remove Specific Index
 void list_rem_ind(struct List *l, int rem_ind){
     struct List_Node *curr_n = l->head;
     struct List_Node *next_n = curr_n->next_node;
