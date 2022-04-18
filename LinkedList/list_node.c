@@ -5,6 +5,14 @@
 
 #include "list_node.h"
 
+//Future additions
+    //ln_print_node() is able to handle the following types
+        //Char
+        //Strings
+        //structs(generic)
+        //double
+        //float
+
 //Create Node
 struct List_Node * ln_create_node(void *data, size_t s, char ln_type[]){
     struct List_Node * n = malloc(256*sizeof(int)); //For now give a static amount of memory

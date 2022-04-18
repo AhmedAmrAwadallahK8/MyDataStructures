@@ -5,6 +5,9 @@
 #include "list_node.h"
 #include "linkedlist.h"
 
+//Future additions
+    //Change data at index()
+
 
 
 struct List create_list(){
@@ -41,18 +44,6 @@ void list_print(struct List *l){
 
     while(curr_n != NULL){
         ln_print_node(curr_n);
-        /**strcpy(curr_type, ln_get_type(curr_n));
-        data_ptr = ln_get_data(curr_n);
-        //Node contains int type
-        if(strcmp(curr_type,"int") == 0){
-            int int_data = *(int*)data_ptr;
-            printf("\nType: %s Data: %d", curr_type, int_data);
-        }
-        //Node contains type that hasn't been programmed with any print behavior
-        else{
-            printf("\nType: %s Data: Data printing for this type is unspecified", curr_type);
-        }**/
-        
         curr_n = curr_n->next_node;
     }
     printf("\n");
@@ -128,3 +119,5 @@ void list_rem_ind(struct List *l, int rem_ind){
         l->len--;
     }
 }
+
+
