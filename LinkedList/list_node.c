@@ -54,6 +54,10 @@ void ln_print_node(struct List_Node *n){
         int int_data = *(int*)data_ptr;
         printf("\nType: %s Data: %d", curr_type, int_data);
     }
+    else if(strcmp(curr_type, "char") == 0){
+        char char_data = *(char*)data_ptr;
+        printf("\nType: %s Data: %c", curr_type, char_data);
+    }
     //Node contains character array type(string)
     else if(strcmp(curr_type,"char[]") == 0){
         char *str_data = (char*)data_ptr;

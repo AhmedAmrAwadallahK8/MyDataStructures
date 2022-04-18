@@ -9,7 +9,6 @@
     //Replace data at index()
     //Replace data and change type that node holds
     //push functions for more types
-        //Char
         //structs(generic)
         //Bool
         //long
@@ -51,11 +50,18 @@ void list_push_int(struct List *l, int data){
     list_add_node(l, new_n);
 }
 
+//Prepares a char node to be added to the list
+void list_push_char(struct List *l, char data){
+    char d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(char), "char");
+    list_add_node(l, new_n);
+}
+
 //Prepares a string node to be added to the list
 void list_push_string(struct List *l, char data[]){
     int str_len = strlen(data);
 
-    //Code for specifying exact size of string(Disabled for now)
+    //Code for specifying exact size of string(Disabled for now and requires adjustments in ln_print_node if enabled)
     /**char type[16] = "";
     char type_p1[6] = "char[";
     char type_p2[10] = "";

@@ -12,12 +12,17 @@ int main(){
     list_push_int(&l, 1);
     list_push_int(&l, 2);
     list_push_string(&l, "Hello World");
+    list_push_char(&l, 'a');
 
     list_print(&l);
     printf("\nInput index: ");
     scanf("%d", &ind);
 
     n = list_get_ind(&l, ind);
+
+    ln_print_node(n);
+
+    list_rem_ind(&l, ind);
 
     ln_print_node(n);
 
