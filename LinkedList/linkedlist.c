@@ -54,9 +54,9 @@ void list_print(struct List *l){
         }
         curr_n = curr_n->next_node;
     }
-
-
+    printf("\n");
 }
+
 void list_pop(struct List *l){
     struct List_Node *curr_n = l->head;
     struct List_Node *next_n = curr_n->next_node;
@@ -76,9 +76,35 @@ void list_pop(struct List *l){
 
 }
 
-void list_rem_ind(struct List *l, int ind){
+void list_rem_ind(struct List *l, int rem_ind){
+    struct List_Node *curr_n = l->head;
+    struct List_Node *next_n = curr_n->next_node;
+    struct List_Node *free_n = NULL;
+    int curr_ind = 0;
 
     //List index is out of range
-    if(ind >= l->len){printf("\nIndex out of bounds"); }
+    if((rem_ind >= l->len) | (rem_ind < 0)){printf("\nIndex out of bounds"); }
 
+    //Remove final Element
+    if(rem_ind == (l->len - 1)){list_pop(l); }
+    //Remove first element
+    else if(rem_ind == 0){
+        l->head = next_n;
+        ln_free_node(curr_n);
+    }
+    //Somewhere in between
+    else{
+        //Find node to remove
+        while(curr_ind != (rem_ind-1)){
+            curr_n = curr_n->next_node;
+            next_n = next_n->next_node;
+        }
+        //Handle pointers
+        free_n = next_n;
+        curr_n->next_node = next_n->next_node;
+
+        //Free and decrement list length
+        ln_free_node(free_n);
+        l->len--;
+    }
 }

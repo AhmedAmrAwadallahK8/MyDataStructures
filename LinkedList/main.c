@@ -5,14 +5,16 @@
 
 int main(){
     struct List l = create_list();
+    int ind = 0;
 
     list_push_int(&l, 0);
     list_push_int(&l, 1);
     list_push_int(&l, 2);
 
     list_print(&l);
-
-    list_pop(&l);
+    printf("\nInput index to remove: ");
+    scanf("%d", &ind);
+    list_rem_ind(&l, ind);
 
     list_print(&l);
 

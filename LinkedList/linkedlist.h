@@ -21,4 +21,7 @@ void list_print(struct List *l);
 //Remove tail node in list
 void list_pop(struct List *l);
 
+//Remove Specific Index
+void list_rem_ind(struct List *l, int rem_ind);
+
 #endif
