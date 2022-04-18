@@ -10,8 +10,12 @@
         //Char
         //Strings
         //structs(generic)
-        //double
+        //Bool
+        //long
+        //long long
         //float
+        //double
+        //long double
 
 //Create Node
 struct List_Node * ln_create_node(void *data, size_t s, char ln_type[]){

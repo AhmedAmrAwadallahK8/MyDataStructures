@@ -7,6 +7,16 @@
 
 //Future additions
     //Change data at index()
+    //push functions for more types
+        //Char
+        //Strings
+        //structs(generic)
+        //Bool
+        //long
+        //long long
+        //float
+        //double
+        //long double
 
 
 
@@ -17,15 +27,11 @@ struct List create_list(){
     return l;
 }
 
-
-//Adds new integer node to list
-void list_push_int(struct List *l, int data){
-    int d[1] = {data};
+//Adds given node to end of list
+void list_add_node(struct List *l, struct List_Node *new_n){
     struct List_Node *curr_n = l->head;
-    struct List_Node *new_n = ln_create_node((void*)d, sizeof(int), "int");
-
     //List Is Empty
-    if(l->len == 0){
+    if(l->head == NULL){
         l->head = new_n;
     }
     //List Has Atleast One Element
@@ -36,6 +42,18 @@ void list_push_int(struct List *l, int data){
         curr_n->next_node = new_n;
     }
     l->len++;
+}
+
+//Prepares an integer node to be added to the list
+void list_push_int(struct List *l, int data){
+    int d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(int), "int");
+    list_add_node(l, new_n);
+}
+
+//Prepares a string node to be added to the list
+void list_push_string(struct List *l, char data[]){
+    
 }
 
 //Print List

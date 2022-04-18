@@ -12,7 +12,10 @@ struct List{
 //Creates Empty List
 struct List create_list();
 
-//Adds new integer node to list
+//Adds given node to end of list
+void list_add_node(struct List *l, struct List_Node *new_n);
+
+//Prepares an integer node to be added to the list
 void list_push_int(struct List *l, int data);
 
 //Print List
