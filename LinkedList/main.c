@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "list_node.h"
 #include "linkedlist.h"
@@ -13,6 +14,7 @@ int main(){
     list_push_int(&l, 2);
     list_push_string(&l, "Hello World");
     list_push_char(&l, 'a');
+    list_push_bool(&l, true);
 
     list_print(&l);
     printf("\nInput index: ");

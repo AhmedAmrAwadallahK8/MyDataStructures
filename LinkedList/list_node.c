@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include "list_node.h"
 
 //Future additions
     //ln_print_node() is able to handle the following types
-        //Char
-        //Strings
         //structs(generic)
         //Bool
         //long
@@ -53,6 +52,10 @@ void ln_print_node(struct List_Node *n){
     if(strcmp(curr_type,"int") == 0){
         int int_data = *(int*)data_ptr;
         printf("\nType: %s Data: %d", curr_type, int_data);
+    }
+    else if(strcmp(curr_type, "bool") == 0){
+        bool bool_data = *(bool*)data_ptr;
+        printf("\nType: %s Data: %s", curr_type, bool_data?"true":"false");
     }
     else if(strcmp(curr_type, "char") == 0){
         char char_data = *(char*)data_ptr;

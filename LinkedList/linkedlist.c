@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "list_node.h"
 #include "linkedlist.h"
@@ -47,6 +48,13 @@ void list_add_node(struct List *l, struct List_Node *new_n){
 void list_push_int(struct List *l, int data){
     int d[1] = {data};
     struct List_Node *new_n = ln_create_node((void*)d, sizeof(int), "int");
+    list_add_node(l, new_n);
+}
+
+//Prepares a bool node to be added to the list
+void list_push_bool(struct List *l, bool data){
+    bool d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(bool), "bool");
     list_add_node(l, new_n);
 }
 
