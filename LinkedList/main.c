@@ -15,6 +15,11 @@ int main(){
     list_push_string(&l, "Hello World");
     list_push_char(&l, 'a');
     list_push_bool(&l, true);
+    list_push_long(&l, 10);
+    list_push_ll(&l, 100);
+    list_push_float(&l, 10.0);
+    list_push_double(&l, 100.0);
+    list_push_ld(&l, 1000.0);
 
     list_print(&l);
     printf("\nInput index: ");

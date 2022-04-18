@@ -9,7 +9,6 @@
 //Future additions
     //ln_print_node() is able to handle the following types
         //structs(generic)
-        //Bool
         //long
         //long long
         //float
@@ -52,6 +51,26 @@ void ln_print_node(struct List_Node *n){
     if(strcmp(curr_type,"int") == 0){
         int int_data = *(int*)data_ptr;
         printf("\nType: %s Data: %d", curr_type, int_data);
+    }
+    else if(strcmp(curr_type,"long") == 0){
+        long long_data = *(long*)data_ptr;
+        printf("\nType: %s Data: %ld", curr_type, long_data);
+    }
+    else if(strcmp(curr_type,"long long") == 0){
+        long long ll_data = *(long long*)data_ptr;
+        printf("\nType: %s Data: %lld", curr_type, ll_data);
+    }
+    else if(strcmp(curr_type,"float") == 0){
+        float float_data = *(float*)data_ptr;
+        printf("\nType: %s Data: %f", curr_type, float_data);
+    }
+    else if(strcmp(curr_type,"double") == 0){
+        double double_data = *(double*)data_ptr;
+        printf("\nType: %s Data: %f", curr_type, double_data);
+    }
+    else if(strcmp(curr_type,"long double") == 0){
+        long double ld_data = *(long double*)data_ptr;
+        printf("\nType: %s Data: %Lf", curr_type, ld_data);
     }
     else if(strcmp(curr_type, "bool") == 0){
         bool bool_data = *(bool*)data_ptr;

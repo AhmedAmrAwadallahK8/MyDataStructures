@@ -11,7 +11,6 @@
     //Replace data and change type that node holds
     //push functions for more types
         //structs(generic)
-        //Bool
         //long
         //long long
         //float
@@ -48,6 +47,41 @@ void list_add_node(struct List *l, struct List_Node *new_n){
 void list_push_int(struct List *l, int data){
     int d[1] = {data};
     struct List_Node *new_n = ln_create_node((void*)d, sizeof(int), "int");
+    list_add_node(l, new_n);
+}
+
+//Prepares a long node to be added to the list
+void list_push_long(struct List *l, long data){
+    long d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(long), "long");
+    list_add_node(l, new_n);
+}
+
+//Prepares a long long node to be added to the list
+void list_push_ll(struct List *l, long long data){
+    long long d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(long long), "long long");
+    list_add_node(l, new_n);
+}
+
+//Prepares a float node to be added to the list
+void list_push_float(struct List *l, float data){
+    float d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(float), "float");
+    list_add_node(l, new_n);
+}
+
+//Prepares a double node to be added to the list
+void list_push_double(struct List *l, double data){
+    double d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(double), "double");
+    list_add_node(l, new_n);
+}
+
+//Prepares a long double node to be added to the list
+void list_push_ld(struct List *l, long double data){
+    long double d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(long double), "long double");
     list_add_node(l, new_n);
 }
 
