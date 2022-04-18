@@ -20,15 +20,17 @@ struct List_Node * ln_create_node(void *data, size_t s, char ln_type[]){
     return n;
 }
 
+//Get pointer to data
 void *ln_get_data(struct List_Node *n){
     return n->data;
 }
 
+//Get type description
 char *ln_get_type(struct List_Node *n){
     return n->type;
 }
 
-//Delete Unused Node
+//Free memory associated with node
 void ln_free_node(struct List_Node *n){
     free(n->data);
     free(n);

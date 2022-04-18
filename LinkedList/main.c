@@ -5,6 +5,7 @@
 
 int main(){
     struct List l = create_list();
+    struct List_Node * n = NULL;
     int ind = 0;
 
     list_push_int(&l, 0);
@@ -12,9 +13,10 @@ int main(){
     list_push_int(&l, 2);
 
     list_print(&l);
-    printf("\nInput index to remove: ");
+    printf("\nInput index: ");
     scanf("%d", &ind);
-    list_rem_ind(&l, ind);
+
+    n = list_get_ind(&l, ind);
 
     list_print(&l);
 

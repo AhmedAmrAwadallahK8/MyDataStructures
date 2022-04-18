@@ -76,6 +76,21 @@ void list_pop(struct List *l){
 
 }
 
+struct List_Node * list_get_node(struct List *l, int get_ind){
+    struct List_Node *curr_n = l->head;
+    int curr_ind = 0;
+
+    //List index is out of range
+    if((get_ind >= l->len) | (get_ind < 0)){printf("\nIndex out of bounds"); }
+    else{
+        while(curr_ind != get_ind){
+            curr_n = curr_n->next_node;
+            curr_ind++;
+        }  
+        return curr_n;
+    }
+}
+
 void list_rem_ind(struct List *l, int rem_ind){
     struct List_Node *curr_n = l->head;
     struct List_Node *next_n = curr_n->next_node;
