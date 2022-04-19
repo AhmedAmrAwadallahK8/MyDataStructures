@@ -55,7 +55,10 @@ int main(){
     ln_print_node(m);
     ln_print_node(t);
 
+    
     free(ptr);
+    printf("\n");
+    list_print(&l);
     /** Index removal testing code
     printf("\nInput index: ");
     scanf("%d", &ind);

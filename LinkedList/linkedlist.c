@@ -117,7 +117,7 @@ void list_push_string(struct List *l, char data[]){
 //Print List
 void list_print(struct List *l){
     struct List_Node *curr_n = l->head;
-
+    if(curr_n == NULL){printf("\nList is empty. "); }
     while(curr_n != NULL){
         ln_print_node(curr_n);
         curr_n = curr_n->next_node;
@@ -303,5 +303,6 @@ void list_free_list(struct List *l){
         curr_n = curr_n->next_node;
         ln_free_node(free_n);
     }
+    l->head = NULL;
     l->len = 0;
 }
