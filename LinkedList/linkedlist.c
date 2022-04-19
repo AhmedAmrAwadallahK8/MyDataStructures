@@ -9,7 +9,7 @@
 
 //Future additions
     //Replace data at index()
-    //Refactor list_push_x to give some functionality to list_node
+    //Refactor list_push_x to give some functionality to list_node?
     //push functions for more types
         //structs(generic)
 
@@ -23,6 +23,7 @@ struct List create_list(){
 }
 
 //Adds given node to end of list
+//Internal only function
 void list_add_node(struct List *l, struct List_Node *new_n){
     struct List_Node *curr_n = l->head;
     //List Is Empty
@@ -162,6 +163,11 @@ struct List_Node * list_get_ind(struct List *l, int get_ind){
     return curr_n;
 }
 
+//Prints node at specified index
+void list_print_ind(struct List *l, int ind){
+    ln_print_node(list_get_ind(l, ind));
+}
+
 //Remove Specific Index
 void list_rem_ind(struct List *l, int rem_ind){
     struct List_Node *curr_n = l->head;
@@ -201,7 +207,7 @@ void list_rem_ind(struct List *l, int rem_ind){
     //Test Start of list
     //Test middle of list
     //Test End of List
-void list_replace_ind(struct List *l, struct List_Node *new_n, int ind){
+void replace_ind(struct List *l, struct List_Node *new_n, int ind){
     int curr_ind = 0;
     struct List_Node *curr_n = l->head;
     struct List_Node *next_n = curr_n->next_node;
@@ -222,4 +228,67 @@ void list_replace_ind(struct List *l, struct List_Node *new_n, int ind){
     curr_n->next_node = new_n;
     new_n->next_node = next_n->next_node;
     ln_free_node(next_n);
+}
+
+//Prepares an integer node to replace the node at specified index
+void list_replace_int(struct List *l, int data, int rep_ind){
+    int d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(int), "int");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a long node to replace the node at specified index
+void list_replace_long(struct List *l, long data, int rep_ind){
+    long d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(long), "long");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a long long node to replace the node at specified index
+void list_replace_ll(struct List *l, long long data, int rep_ind){
+    long long d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(long long), "long long");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a float node to replace the node at specified index
+void list_replace_float(struct List *l, float data, int rep_ind){
+    float d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(float), "float");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a double node to replace the node at specified index
+void list_replace_double(struct List *l, double data, int rep_ind){
+    double d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(double), "double");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a long double node to replace the node at specified index
+void list_replace_ld(struct List *l, long double data, int rep_ind){
+    long double d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(long double), "long double");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a bool node to replace the node at specified index
+void list_replace_bool(struct List *l, bool data, int rep_ind){
+    bool d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(bool), "bool");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a char node to replace the node at specified index
+void list_replace_char(struct List *l, char data, int rep_ind){
+    char d[1] = {data};
+    struct List_Node *new_n = ln_create_node((void*)d, sizeof(char), "char");
+    replace_ind(l, new_n, rep_ind);
+}
+
+//Prepares a string node to replace the node at specified index
+void list_replace_string(struct List *l, char data[], int rep_ind){
+    int str_len = strlen(data);
+    struct List_Node *new_n = ln_create_node((void*)data, sizeof(char)*(str_len+1), "char[]");
+    replace_ind(l, new_n, rep_ind);
 }
