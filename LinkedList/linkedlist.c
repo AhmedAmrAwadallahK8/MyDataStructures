@@ -8,7 +8,6 @@
 #include "linkedlist.h"
 
 //Future additions
-    //Replace data at index()
     //Refactor list_push_x to give some functionality to list_node?
     //push functions for more types
         //structs(generic)
@@ -145,6 +144,7 @@ void list_pop(struct List *l){
 
 }
 
+//Check if index in range. Throw error if not in range
 void range_check(struct List *l, int ind){
     if((ind >= l->len) | (ind < 0)){printf("\nLinkedList Error: Index out of bounds"); exit(EXIT_FAILURE); }
 }
