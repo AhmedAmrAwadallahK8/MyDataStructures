@@ -292,3 +292,16 @@ void list_replace_string(struct List *l, char data[], int rep_ind){
     struct List_Node *new_n = ln_create_node((void*)data, sizeof(char)*(str_len+1), "char[]");
     replace_ind(l, new_n, rep_ind);
 }
+
+//Free the memory for the entire list
+void list_free_list(struct List *l){
+    struct List_Node *curr_n = l->head;
+    struct List_Node *free_n = NULL;
+
+    while(curr_n != NULL){
+        free_n = curr_n;
+        curr_n = curr_n->next_node;
+        ln_free_node(free_n);
+    }
+    l->len = 0;
+}

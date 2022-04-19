@@ -8,7 +8,12 @@
 int main(){
     struct List l = create_list();
     struct List_Node * n = NULL;
+    struct List_Node * h = NULL;
+    struct List_Node * m = NULL;
+    struct List_Node * t = NULL;
     int ind = 0;
+    int *ptr = NULL;
+    int mem_wipe_c = 0;
 
     list_push_int(&l, 0);
     list_push_int(&l, 1.);
@@ -23,14 +28,44 @@ int main(){
     list_push_ld(&l, 1000.0);
 
     list_print(&l);
+    /**get ind testing code
     printf("\nInput index: ");
     scanf("%d", &ind);
 
     n = list_get_ind(&l, ind);
 
-    ln_print_node(n);
+    ln_print_node(n);**/
 
-    printf("\nHead Replacement test");
+    h = list_get_ind(&l, 0);
+    m = list_get_ind(&l, 4);
+    t = list_get_ind(&l, 10);
+
+    printf("\nStorage before freeing memory of the head, node in the middle, and tail");
+    ln_print_node(h);
+    ln_print_node(m);
+    ln_print_node(t);
+
+    list_free_list(&l);
+    printf("\n\nInput Memory Number to Wipe: ");
+    scanf("%d", &mem_wipe_c);
+    ptr = calloc(mem_wipe_c, sizeof(int));
+
+    printf("\nStorage after freeing memory of the head, node in the middle, and tail");
+    ln_print_node(h);
+    ln_print_node(m);
+    ln_print_node(t);
+
+    free(ptr);
+    /** Index removal testing code
+    printf("\nInput index: ");
+    scanf("%d", &ind);
+
+    list_rem_ind(&l, ind);
+
+    ln_print_node(n);**/
+
+    //Replacement Testing Code
+    /**printf("\nHead Replacement test");
     list_replace_int(&l, 4, 0);
     list_print(&l);
 
@@ -72,20 +107,7 @@ int main(){
 
     printf("\nLong Double Replacement test");
     list_replace_ld(&l, 1000.0, 2);
-    list_print(&l);
-
-
-
-
-
-
-
-    printf("\nInput index: ");
-    scanf("%d", &ind);
-
-    list_rem_ind(&l, ind);
-
-    ln_print_node(n);
+    list_print(&l);**/
 
     exit(EXIT_SUCCESS);
 }

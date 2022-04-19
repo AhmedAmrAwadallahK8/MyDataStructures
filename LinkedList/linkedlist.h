@@ -84,5 +84,7 @@ void list_replace_char(struct List *l, char data, int rep_ind);
 //Prepares a string node to replace the node at specified index
 void list_replace_string(struct List *l, char data[], int rep_ind);
 
+//Free the memory for the entire list
+void list_free_list(struct List *l);
 
 #endif
