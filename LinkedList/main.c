@@ -28,7 +28,8 @@ int main(){
     list_push_ld(&l, 1000.0);
 
     list_print(&l);
-    /**get ind testing code
+    /**
+    //get ind testing code
     printf("\nInput index: ");
     scanf("%d", &ind);
 
@@ -36,39 +37,18 @@ int main(){
 
     ln_print_node(n);**/
 
-    h = list_get_ind(&l, 0);
-    m = list_get_ind(&l, 4);
-    t = list_get_ind(&l, 10);
-
-    printf("\nStorage before freeing memory of the head, node in the middle, and tail");
-    ln_print_node(h);
-    ln_print_node(m);
-    ln_print_node(t);
-
-    list_free_list(&l);
-    printf("\n\nInput Memory Number to Wipe: ");
-    scanf("%d", &mem_wipe_c);
-    ptr = calloc(mem_wipe_c, sizeof(int));
-
-    printf("\nStorage after freeing memory of the head, node in the middle, and tail");
-    ln_print_node(h);
-    ln_print_node(m);
-    ln_print_node(t);
-
-    
-    free(ptr);
-    printf("\n");
-    list_print(&l);
-    /** Index removal testing code
+    //Index removal testing code
     printf("\nInput index: ");
     scanf("%d", &ind);
-
+    n = list_get_ind(&l, ind);
     list_rem_ind(&l, ind);
+    ln_print_node(n);
+    list_push_int(&l, 2);
 
-    ln_print_node(n);**/
 
-    //Replacement Testing Code
-    /**printf("\nHead Replacement test");
+    /**
+    //Replacement Testing Code  
+    printf("\nHead Replacement test");
     list_replace_int(&l, 4, 0);
     list_print(&l);
 
@@ -110,7 +90,34 @@ int main(){
 
     printf("\nLong Double Replacement test");
     list_replace_ld(&l, 1000.0, 2);
-    list_print(&l);**/
+    list_print(&l);
 
+    h = list_get_ind(&l, 0);
+    m = list_get_ind(&l, 4);
+    t = list_get_ind(&l, 10);
+
+    printf("\nStorage before freeing memory of the head, node in the middle, and tail");
+    ln_print_node(h);
+    ln_print_node(m);
+    ln_print_node(t);
+
+    list_free_list(&l);
+    printf("\n\nInput Memory Number to Wipe: ");
+    scanf("%d", &mem_wipe_c);
+    ptr = calloc(mem_wipe_c, sizeof(int));
+
+    printf("\nStorage after freeing memory of the head, node in the middle, and tail");
+    ln_print_node(h);
+    ln_print_node(m);
+    ln_print_node(t);
+
+    
+    free(ptr);
+    printf("\n");
+    list_print(&l);**/
+    
+
+    
+    printf("\nProgram Complete");
     exit(EXIT_SUCCESS);
 }

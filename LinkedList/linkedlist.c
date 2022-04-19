@@ -175,27 +175,34 @@ void list_rem_ind(struct List *l, int rem_ind){
     struct List_Node *free_n = NULL;
     int curr_ind = 0;
 
+    printf("\n1.1");
     //List index is out of range
     range_check(l, rem_ind);
 
+    printf("\n1.2");
     //Remove final Element
-    if(rem_ind == (l->len - 1)){list_pop(l); }
+    if(rem_ind == (l->len - 1)){printf("\n1.3"); list_pop(l); }
+    
     //Remove first element
     else if(rem_ind == 0){
+        printf("\n1.4");
         l->head = next_n;
         ln_free_node(curr_n);
     }
     //Somewhere in between
     else{
         //Find node to remove
+        printf("\n1.5");
         while(curr_ind != (rem_ind-1)){
             curr_n = curr_n->next_node;
             next_n = next_n->next_node;
+            curr_ind++;
         }
+        printf("\n1.6");
         //Handle pointers
         free_n = next_n;
         curr_n->next_node = next_n->next_node;
-
+        printf("\n1.7");
         //Free and decrement list length
         ln_free_node(free_n);
         l->len--;

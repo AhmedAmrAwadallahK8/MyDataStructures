@@ -1,7 +1,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-
 #include "list_node.h"
 
 struct List{
